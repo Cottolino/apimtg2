@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Session;
+use App\Models\CardGot;
+use App\Models\CardSearch;
+use App\Models\CardDeck;
 use App\Models\Deck;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -219,4 +222,19 @@ class MtgController extends Controller
     {
         return Deck::find($id)->CardDeck()->get();
     }
+
+    // BelongsTo
+    public function cardGotSession($id)
+    {
+        return CardGot::findOrFail($id)->session()->get();
+    }
+    public function cardSearchSession($id)
+    {
+        return CardSearch::findOrFail($id)->session()->get();
+    }
+    public function cardDeck($id)
+    {
+        return CardDeck::findOrFail($id)->deck()->get();
+    }
+
 }

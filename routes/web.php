@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MtgController;
+use App\Http\Controllers\FilesController;
 use App\Models\CardGot;
 use App\Models\Session;
 use Illuminate\Support\Facades\Route;
@@ -16,14 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
-Route::get('/cardsgot', function(){
-    return CardGot::get();
-});
+// Route::get('/cardsgot', function(){
+//     return CardGot::get();
+// });
 
 
 

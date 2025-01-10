@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MtgController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FilesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,3 +54,12 @@ Route::post('/savedeck',[MtgController::class,'saveDeck'])->middleware('auth:api
 Route::get('/decks',[MtgController::class,'decks'])->middleware('auth:api');
 
 Route::get('/deck/{id}',[MtgController::class,'deck'])->middleware('auth:api');
+
+//BelongsTo
+Route::get('/cardgotsession/{id}',[MtgController::class,'cardGotSession']);
+Route::get('/cardsearchsession/{id}',[MtgController::class,'cardSearchSession']);
+Route::get('/carddeck/{id}',[MtgController::class,'cardDeck']);
+
+
+//Test
+Route::get('/file/{filename}',[FilesController::class,'show']);
